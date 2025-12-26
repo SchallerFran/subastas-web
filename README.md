@@ -1,59 +1,69 @@
-# SubastasWeb
+# 🛒 Subastas Web – Aplicación Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+Aplicación web desarrollada en **Angular** que permite gestionar y visualizar subastas de productos.  
+Incluye listado dinámico de productos, uso de **pipes estándar y personalizados**, formulario reactivo de contacto y una interfaz moderna basada en una paleta de colores definida.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📌 Descripción del proyecto
 
-```bash
+Este proyecto consiste en una aplicación de subastas donde el usuario puede:
+
+- Visualizar una lista de productos en subasta.
+- Ver precios formateados mediante **pipes estándar** (`currency`, `date`).
+- Aplicar un **pipe personalizado de descuento** sobre las ofertas.
+- Interactuar con un formulario reactivo para contacto.
+- Agregar y eliminar productos de forma dinámica.
+- Navegar suavemente entre secciones mediante scroll animado.
+
+El objetivo principal es afianzar conceptos de **Angular**, componentes, pipes, formularios reactivos y buenas prácticas de UI.
+
+---
+
+## 🛠️ Instalación y ejecución
+
+### 1. Clonar el repositorio
+git clone https://github.com/SchallerFran/subastas-web
+
+### 2. Instalar dependencias
+npm install
+
+### 3. Ejecutar el servidor de desarrollo
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abrir en el navegador:  
+http://localhost:4200
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🖼️ Capturas de pantalla
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+> 📷 Las capturas se encuentran en la carpeta `/screenshots` del proyecto.
 
-```bash
-ng generate --help
-```
+### 📦 Lista de productos cargada
+![Lista de productos](screenshots/lista-productos.png)
 
-## Building
+### 🔧 Aplicación de pipes estándar
+Se aplican los siguientes pipes:
+- `currency` para el formato de precios.
+- `date` para fechas de inicio y fin de las subastas.
 
-To build the project run:
+![Pipes estándar](screenshots/pipes-estandar.png)
 
-```bash
-ng build
-```
+### 🎉 Pipe personalizado – Descuento
+Ejemplo del **pipe personalizado de descuento**, aplicado sobre el precio de la oferta mostrando una promoción especial.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+![Pipe descuento](screenshots/pipe-descuento.png)
 
-## Running unit tests
+### 📝 Formulario – Agregar y eliminar productos
+Comportamiento del formulario al agregar y eliminar productos dinámicamente.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+![Formulario productos](screenshots/formulario-productos.png)
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 👤 Autor
+- **Francisco Schaller**
+- Curso Desarrollo con Angular
+- Unidad Nro. 3
