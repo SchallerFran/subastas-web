@@ -1,0 +1,60 @@
+<section class="productos-container" id="lista-productos">
+  <h2>Subastas</h2>
+
+  <p class="descuento-banner">{{ porcentaje_descuento }}% de descuento en honorarios por las fiestas</p>
+
+  <p *ngIf="loading">Cargando productos...</p>
+
+  <div *ngIf="!loading && products.length > 0" class="productos-lista" #carousel>
+    <button class="carousel-btn prev" (click)="scrollLeft()">&#10094;</button>
+
+    <article class="producto-card" *ngFor="let producto of products">
+      <img class="producto-img" [src]="producto.imgUrl" [alt]="producto.titulo"/>
+      <h3>{{ producto.titulo }}</h3>
+      <p class="precio-original">{{ producto.precioActual | currency:'$':'symbol':'1.0-0'}}</p>
+      <p class="precio">
+        {{ producto.precioActual | descuento: porcentaje_descuento | currency:'$':'symbol':'1.0-0'}}
+        <span class="badge-descuento">-{{ porcentaje_descuento }}%</span>
+      </p>
+      <p class="fechas"><span>Inicio:</span> {{ producto.fechaInicio | date:'dd/MM/yyyy' }}</p>
+      <p class="fechas"><span>Fin:</span> {{ producto.fechaFin | date:'dd/MM/yyyy' }}</p>
+
+      <button (click)="eliminar(producto.id)">Eliminar</button>
+      <button (click)="abrirModal(producto)">Más info</button>
+    </article>
+
+    <button class="carousel-btn next" (click)="scrollRight()">&#10095;</button>
+  </div>
+
+  <p *ngIf="!loading && products.length === 0">No hay subastas cargadas</p>
+
+  <!-- Modal Subasta -->
+  <div class="modal-backdrop" *ngIf="productoSeleccionado">
+    <div class="modal">
+      <img class="producto-img-modal" [src]="productoSeleccionado.imgUrl" [alt]="productoSeleccionado.titulo"/>
+
+      <div class="modal-content">
+
+        <h2>{{ productoSeleccionado.titulo }}</h2>
+        <p>{{ productoSeleccionado.descripcion }}</p>
+        <p><strong>Precio actual:</strong>{{ productoSeleccionado.precioActual | currency:'$':'symbol':'1.0-0'}}</p>
+        <p>
+          <strong>Precio con descuento fiestas:</strong>{{ productoSeleccionado.precioActual | descuento: porcentaje_descuento | currency:'$':'symbol':'1.0-0'}}
+          <span class="badge-descuento">-{{ porcentaje_descuento }}%</span>
+        </p>
+        <p><span>Inicio:</span>{{ productoSeleccionado.fechaInicio | date:'dd/MM/yyyy' }}</p>
+        <p><span>Fin:</span>{{ productoSeleccionado.fechaFin | date:'dd/MM/yyyy' }}</p>
+        <p *ngIf="!productoSeleccionado.activa"class="subasta-finalizada">La subasta ha finalizado.</p>
+        <div *ngIf="productoSeleccionado.activa" class="oferta">
+          <input type="number" [(ngModel)]="montoOferta" [min]="productoSeleccionado.precioActual + 1" placeholder="Tu oferta"/>
+          <button (click)="ofertar()">Ofertar</button>
+        </div>
+
+        <button class="cerrar" (click)="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="limpiar()">Limpiar todo</button>
+  <button (click)="simularAgregarProducto()">Simular agregar producto</button>
+</section>

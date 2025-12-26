@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --deep-twilight: #03045e;
+  --bright-teal-blue: #0077b6;
+  --turquoise-surf: #00b4d8;
+  --frosted-blue: #90e0ef;
+  --light-cyan: #caf0f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}

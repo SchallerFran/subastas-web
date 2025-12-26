@@ -1,0 +1,17 @@
+<section class="hero" [ngStyle]="{'background-image': 'url(' + imagenes[imagenActual] + ')'}">
+  <div class="overlay">
+    <span class="badge">Subastas digitales en tiempo real</span>
+    <h1>Subastas Web</h1>
+
+    <p class="descripcion">
+      Participá en subastas digitales activas, realizá ofertas en tiempo real
+      y accedé a oportunidades únicas desde cualquier lugar.
+      Una plataforma segura, transparente y pensada para que cada oferta cuente.
+    </p>
+
+    <div class="acciones">
+      <button class="btn-primary" (click)="scrollASubastas()">Ver subastas</button>
+      <!-- <button class="btn-secondary">Cómo funciona</button> -->
+    </div>
+  </div>
+</section>
