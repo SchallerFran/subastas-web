@@ -42,24 +42,22 @@ http://localhost:4200
 > 📷 Las capturas se encuentran en la carpeta `/screenshots` del proyecto.
 
 ### 📦 Lista de productos cargada
-![Lista de productos](screenshots/lista-productos.png)
+![Lista de productos](screenshots/lista-de-productos.png)
 
 ### 🔧 Aplicación de pipes estándar
 Se aplican los siguientes pipes:
 - `currency` para el formato de precios.
 - `date` para fechas de inicio y fin de las subastas.
 
-![Pipes estándar](screenshots/pipes-estandar.png)
 
 ### 🎉 Pipe personalizado – Descuento
-Ejemplo del **pipe personalizado de descuento**, aplicado sobre el precio de la oferta mostrando una promoción especial.
+El **pipe personalizado de descuento**, aplica sobre el precio de la oferta un descuento y se muestran en pantalla el precio de la oferta con y sin descuento.
 
-![Pipe descuento](screenshots/pipe-descuento.png)
 
 ### 📝 Formulario – Agregar y eliminar productos
-Comportamiento del formulario al agregar y eliminar productos dinámicamente.
+Al seleccionar `simular agregar producto` se genera una subasta nueva predefinida.
 
-![Formulario productos](screenshots/formulario-productos.png)
+![Producto agregado](screenshots/Producto-agregado.png)
 
 ---
 
